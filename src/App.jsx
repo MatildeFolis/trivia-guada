@@ -3,28 +3,28 @@ import { useState } from "react";
 const preguntas = [
   {
     pregunta: "¿Cuál es mi color favorito?",
-    opciones: ["Azul marino", "Verde oliva", "Bordo", "Lila"],
+    opciones: ["Verde", "Azul", "Rojo", "Lila"],
     correcta: 1,
   },
   {
-    pregunta: "¿Qué me encanta hacer en mi tiempo libre?",
-    opciones: ["Leer", "Bailar", "Escuchar música", "Ver series"],
+    pregunta: "¿Qué es lo que más me gusta hacer?",
+    opciones: ["Leer", "Cocinar", "Bailar", "Dibujar"],
     correcta: 2,
   },
   {
     pregunta: "¿Cuál es mi comida favorita?",
-    opciones: ["Sushi", "Pizza", "Pasta", "Milanesa"],
+    opciones: ["Sushi", "Pizza", "Milanesa", "Pastas"],
     correcta: 3,
   },
   {
     pregunta: "¿A qué artista escucho todo el día?",
-    opciones: ["Bizarrap", "Tini", "Nicki Nicole", "Maria Becerra"],
-    correcta: 2,
+    opciones: ["Coldplay", "Airbag", "La Beriso", "Miranda"],
+    correcta: 1,
   },
   {
-    pregunta: "¿Cuál es mi serie favorita?",
-    opciones: ["Stranger Things", "Euphoria", "La Casa de Papel", "Emily in Paris"],
-    correcta: 1,
+    pregunta: "¿Cuál es mi estación favorita?",
+    opciones: ["Otoño", "Primavera", "Invierno", "Verano"],
+    correcta: 3,
   },
 ];
 
@@ -65,7 +65,7 @@ export default function InvitacionTrivia() {
   };
 
   const getMensaje = () => {
-    if (puntaje === 5) return { texto: "¡Me conocés de memoria! 🌿", sub: "Sos mi persona favorita en la fiesta." };
+    if (puntaje === 5) return { texto: "¡Me conocés de memoria! 🖤", sub: "Sos mi persona favorita en la fiesta." };
     if (puntaje >= 3) return { texto: "¡Bastante bien! ✨", sub: "Ya casi, pero hay cosas que solo yo sé..." };
     return { texto: "¡Hay que ponerse al día! 🫶", sub: "Más razones para festejar juntos." };
   };
@@ -76,7 +76,7 @@ export default function InvitacionTrivia() {
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
         .card{background:#fff;border-radius:2px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 2px 40px rgba(71,79,46,0.10);border:1px solid #e8ebe0}
-        .header-band{background:#ffffff;padding:40px 32px 28px;text-align:center;border-bottom:1px solid #e8ebe0;position:relative}
+        .header-band{background:#ffffff;padding:40px 32px 28px;text-align:center;border-bottom:1px solid #e8ebe0}
         .header-band::after{content:'';display:block;width:40px;height:1.5px;background:#474f2e;margin:16px auto 0}
         .nombre{font-family:'Playfair Display',serif;font-size:48px;font-weight:400;color:#474f2e;letter-spacing:2px;line-height:1.1}
         .anios{font-family:'Quicksand',sans-serif;font-size:11px;font-weight:500;color:#474f2e;letter-spacing:5px;text-transform:uppercase;margin-bottom:8px;opacity:0.7}
@@ -87,10 +87,8 @@ export default function InvitacionTrivia() {
         .fecha-valor{font-family:'Playfair Display',serif;font-size:18px;color:#474f2e}
         .divider-dot{width:1px;background:#e8ebe0;align-self:stretch}
         .invite-text{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:#666;text-align:center;line-height:1.8;margin-bottom:28px}
-        .trivia-cta{background:#474f2e;color:#fff;border:none;width:100%;padding:16px;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
-        .trivia-cta:hover{background:#333d1e}
-        .trivia-cta-gold{background:transparent;color:#474f2e;border:1px solid #474f2e;width:100%;padding:14px;font-family:'Quicksand',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:12px;transition:all 0.2s}
-        .trivia-cta-gold:hover{background:#474f2e;color:#fff}
+        .trivia-cta{background:#474f2e;color:#fff;border:none;width:100%;padding:16px;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;cursor:pointer}
+        .trivia-cta-gold{background:transparent;color:#474f2e;border:1px solid #474f2e;width:100%;padding:14px;font-family:'Quicksand',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:12px}
         .trivia-header{background:#474f2e;padding:24px 32px;display:flex;align-items:center;justify-content:space-between}
         .trivia-titulo{font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:400;letter-spacing:1px}
         .progress-text{font-family:'Quicksand',sans-serif;font-size:10px;color:rgba(255,255,255,0.7);letter-spacing:2px}
@@ -128,7 +126,7 @@ export default function InvitacionTrivia() {
                 <div className="fecha-item"><span className="fecha-label">Lugar</span><span className="fecha-valor">Janos</span></div>
               </div>
               <p className="invite-text">Quince años de risas, sueños y momentos que no se olvidan.<br/>Te espero para festejar juntos.</p>
-              <button className="trivia-cta" onClick={() => setPantalla("trivia")}>¿Me conocés? →</button>
+              <button className="trivia-cta" onClick={() => setPantalla("trivia")}>¡Juguemos! 🎉</button>
             </div>
           </>
         )}
@@ -167,7 +165,7 @@ export default function InvitacionTrivia() {
                 <div className="respuestas-fila">{respuestas.map((r,i)=><div key={i} className="resp-dot" style={{background:r?"#474f2e":"#c62828"}}/>)}</div>
                 <p className="resultado-mensaje">{msg.texto}</p>
                 <p className="resultado-sub">{msg.sub}</p>
-                <button className="trivia-cta" onClick={reiniciar}>Volver a la invitación</button>
+                <button className="trivia-cta" onClick={() => window.location.href='https://invitarteonline.com.ar/trivia-guadalupe-xv'}>Volver a la invitación</button>
                 <button className="trivia-cta-gold" onClick={()=>{setPaso(0);setSeleccion(null);setRespondida(false);setPuntaje(0);setRespuestas([]);setPantalla("trivia")}}>Jugar de nuevo</button>
               </div>
             </>
